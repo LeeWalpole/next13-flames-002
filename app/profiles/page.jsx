@@ -3,6 +3,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import FeedHeader from './FeedHeader'
+import FeedCarousel from './FeedCarousel'
+import Feed from './Feed'
+import TestProp from './TestProp'
+
 
 async function getData() {
   const res = await fetch('http://127.0.0.1:10009/wp-json/data/v1/profiles/');
@@ -16,14 +20,31 @@ async function getData() {
   return res.json();
 }
 
-export default async function ProfileFeed() {
+export default async function Profiles() {
   const profiles = await getData();
 
+
+
+
+
   return <main class="main">
+
+
+<TestProp title="React 💙" />
+
+
+{/* <FeedCarousel /> */}
+
+
+
 <div>
 {profiles.map((profile) => (
+
+  
+  
   <div key={profile.id}>
-<Link href={`/profiles/${profile.username}`} >
+
+  <Link href={`/profiles/${profile.username}`} >
     <img src={profile.avatar_url} alt={profile.avatar_alt} />
     </Link>
     <ul class="slider">
@@ -59,6 +80,8 @@ export default async function ProfileFeed() {
 </div>
   </main>;
 }
+
+
 
 
 
