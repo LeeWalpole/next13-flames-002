@@ -1,11 +1,14 @@
 
-
-import Link from 'next/link';
-import Image from 'next/image';
+// import Link from 'next/link';
+// import Image from 'next/image';
 import FeedHeader from './FeedHeader'
-import FeedCarousel from './FeedCarousel'
-import Feed from './Feed'
+// import FeedCarousel from './FeedCarousel'
+// import Feed from './Feed'
 import TestProp from './TestProp'
+import TestProp2 from './TestProp2'
+// import FeedGallery from './FeedGallery'
+import FeedCarousel from './FeedCarousel'
+
 
 
 async function getData() {
@@ -20,65 +23,53 @@ async function getData() {
   return res.json();
 }
 
+
+
 export default async function Profiles() {
   const profiles = await getData();
 
+  return ( 
+<main class="main">
+  
+<FeedCarousel/> 
+
+  <div>
+  {profiles.map((profile) => (
+  <div key={profile.id}>
+
+    {/* <FeedCarousel/> */}
+
+        {/* <section class="slider">
+          {profile.gallery.map((image) => (
+            <figure key={image.url_full}>
+              <FeedGallery gallery_url_thumbnail={image.url_thumbnail} gallery_alt={image.alt} />
+            </figure>
+          ))}
+        </section> */}
+        
+        <FeedHeader id={profile.id} username={profile.username} display_name={profile.display_name} bio_mini={profile.bio_mini} avatar="#" />
+
+        <section class="slider">
+{profile.gallery.map((image) => (
+  <figure key={image.url_full}>{image.url_full}</figure>
+))}
+</section>
 
 
 
 
-  return <main class="main">
+
+  </div>
+  ))}
+  </div>
+
+
 
 
 <TestProp title="React 💙" />
-
-
-{/* <FeedCarousel /> */}
-
-
-
-<div>
-{profiles.map((profile) => (
-
-  
-  
-  <div key={profile.id}>
-
-  <Link href={`/profiles/${profile.username}`} >
-    <img src={profile.avatar_url} alt={profile.avatar_alt} />
-    </Link>
-    <ul class="slider">
-      {profile.gallery.map((image) => (
-        <li key={image.url_full}>
-          <img src={image.url_thumbnail} alt={image.alt} />
-        </li>
-      ))}
-    </ul>
-
-        <header class="feed-item-header">
-        <div class="feed-item-left">
-        <img class="feed-item-mugshot" src="https://64.media.tumblr.com/830cb58659a9dd02f54cd11fc0f21f28/e70c81ce9f956f50-09/s1280x1920/d3faa4cc2fdf0f0131a1b3f2a7a45c4ba856c589.jpg" />
-        <Link href={`/profiles/${profile.username}`} >
-          
-            <div class="feed-item-name">
-                <p class="feed-item-display_name">{profile.display_name }</p>
-                <p class="feed-item-username">@{ profile.username }</p>
-            </div>
-          </Link>
-        </div>
-        <div class="feed-item-right">
-     
-        </div>
-      </header>
-      
-      <footer class="feed-item-footer">
-        <div class="feed-item-bio">{ profile.bio_mini }</div>
-      </footer>
-
-  </div>
-))}
-</div>
-  </main>;
+<TestProp2 person="Name" size="10" />
+</main>
+  );
 }
 
 
