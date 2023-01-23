@@ -2,7 +2,7 @@
 // import Link from 'next/link';
 // import Image from 'next/image';
 import FeedHeader from './FeedHeader'
-import FeedCarousel from './FeedCarousel'
+import Carousel from './Carousel'
 // import Feed from './Feed'
 // import TestProp from './TestProp'
 // import TestProp2 from './TestProp2'
@@ -32,7 +32,7 @@ export default async function Profiles() {
   return ( 
 <main class="main">
   
-<FeedCarousel/>
+<Carousel/>
 
   <div>
   {profiles.map((profile) => (
