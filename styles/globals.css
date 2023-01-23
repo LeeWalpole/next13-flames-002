@@ -601,14 +601,18 @@ table {
   }
 
 
-  .profile-tabs {
-    color: white;
-    font-size: 0.9rem;
-  }
+  
 
-  .profile-tab-section {
-    padding: 20px
-  }
+
+
+
+
+
+
+
+
+
+
 
   .profile-hero {
     padding: 0 40px 25px;
@@ -837,3 +841,72 @@ border-radius: 10rem;
     padding: 0;
     display: block;
   }
+
+
+
+
+
+
+
+
+
+
+ .profile-tabs ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #111;
+    margin-bottom: 6px;
+    text-align: center;
+    height:40px;
+}
+
+.profile-tabs li {
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+    color: white;
+    flex: 1;
+    margin:0 5px;
+}
+
+.profile-tabs ul li.active:after {
+content: '';
+position: absolute;
+bottom: -6px;
+left: 0;
+height: 1px;
+width: 100%;
+background: linear-gradient(#9f6cff 0,#9f6cff 10%,#ff0aaa 75%,#ff6ccc 100%);
+}
+
+
+.profile-tabs ul svg {
+    height: 26px;
+    opacity: 0.33;
+}
+
+
+.profile-tabs ul li.active svg {
+    color: white;
+    opacity: 1;
+}
+
+
+.profile-tabs ul li.active {
+    color: #008438;
+    font-weight: bold;
+}
+
+#active-tab,
+.profile-tabs {
+    width: 100%;
+}
+
+
+/*   
+#active-tab {
+padding: 0.75rem;
+} */

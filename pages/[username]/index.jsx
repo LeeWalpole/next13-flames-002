@@ -41,63 +41,14 @@ export const getStaticPaths = async () => {
 
 
   const Details = ({ profile }) => {
-
-    // Tabs Tutorial Here: https://dev.to/amrtcrypto/creating-linkable-tabs-in-nextjs-the-easy-way-17pg
-    const router = useRouter()
-    const { username } = router.query
-    const [activeTab, setActiveTab] = useState('gallery')
-
-
     // tab 2
-    const [activeTab2, setActiveTab2] = useState('tab1')
-
-    // tab 3
-    const [activeTab3, setActiveTab3] = useState('tab1')
-
+    const [activeTab, setActiveTab] = useState('tab1')
 
 return (
 <>
 
 <div class="profile-section">
 
-
-{ /* Tabs Method 1 */}
-<div>
-<h1>Tab 1</h1>
-      <Link href={`/${username}/gallery`} as={`/${username}/gallery`}>
-        <div className={activeTab === 'gallery' ? 'active' : ''} onClick={() => setActiveTab('gallery')}>Gallery</div>
-      </Link>
-      <Link href="/tab2">
-        <div className={activeTab === 'tab2' ? 'active' : ''} onClick={() => setActiveTab('tab2')}>Tab 2</div>
-      </Link>
-    </div>
-
-
-
-
-{ /* Tabs Method 2 */}
-<div>
-  <h1>Tab 2</h1>
-      <button onClick={() => setActiveTab2('tab1')}>Tab 1</button>
-      <button onClick={() => setActiveTab2('tab2')}>Tab 2</button>
-      {activeTab2 === 'tab1' && <div>Tab 1 Content</div>}
-      {activeTab2 === 'tab2' && <div>Tab 2 Content</div>}
-    </div>
-
-
-
-    { /* Tabs Method 3 */}
-    <div>
-    <h1>Tab 3</h1>
-      <Link href="#tab1" onClick={() => setActiveTab3('tab1')}>
-        <div>Tab 1</div>
-      </Link>
-      <Link href="#tab2" onClick={() => setActiveTab3('tab2')}>
-        <div>Tab 2</div>
-      </Link>
-      {activeTab3 === 'tab1' && <Tab1 />}
-      {activeTab3 === 'tab2' && <Tab2 />}
-    </div>
 
 
 <div class="profile-hero">
@@ -126,8 +77,24 @@ return (
   </div>
 </div>
 
-<ProfileGrid images={profile.gallery} />
 
+<section class="profile-tabs">
+<ul>
+  <li className={activeTab === 'tab1' ? 'active' : ''} onClick={() => setActiveTab('tab1')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+  <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+  </svg></li>
+  <li className={activeTab === 'tab2' ? 'active' : ''} onClick={() => setActiveTab('tab2')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+  </svg></li>
+  <li className={activeTab === 'tab3' ? 'active' : ''} onClick={() => setActiveTab('tab3')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+  </svg>
+  </li>
+</ul>
+      {activeTab === 'tab1' && <div><ProfileGrid images={profile.gallery} /></div>}
+      {activeTab === 'tab2' && <div>Tab 2 Content</div>}
+      </section>
 
 
 </div>
