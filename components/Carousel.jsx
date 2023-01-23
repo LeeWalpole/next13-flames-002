@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 function Carousel ()  {
   return (
@@ -15,13 +14,10 @@ function Carousel ()  {
     <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
-      slidesPerView={2}
+      spaceBetween={0}
+      slidesPerView={1}
       navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
+      pagination={{ clickable: false }}
     >
       <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
       <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
