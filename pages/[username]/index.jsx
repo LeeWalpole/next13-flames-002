@@ -1,12 +1,13 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 import { useState } from 'react'
-import { useRouter } from 'next/router'
-import Tab1 from './tab1'
+// import { useRouter } from 'next/router'
+// import Tab1 from './tab1'
 import Tab2 from './tab2'
+import Tab3 from './tab3'
 
 
 // tab3
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 
 import ProfileGrid from '@/components/ProfileGrid'
 export const getStaticPaths = async () => {
@@ -94,8 +95,8 @@ return (
 </ul>
       {activeTab === 'tab1' && <div><ProfileGrid images={profile.gallery} /></div>}
       {activeTab === 'tab2' && <div><Tab2/></div>}
+      {activeTab === 'tab3' && <div><Tab3/></div>}
       </section>
-
 
 </div>
 </>
