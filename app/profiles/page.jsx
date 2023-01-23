@@ -55,8 +55,6 @@ export default async function Profiles() {
   <figure key={image.url_full}>{image.url_full}</figure>
 ))}
 </section>
-pm run dev
-
 
 
 
