@@ -1,3 +1,13 @@
+import Link from 'next/link'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
+import Tab1 from './tab1'
+import Tab2 from './tab2'
+
+
+// tab3
+import dynamic from 'next/dynamic'
+
 import ProfileGrid from '@/components/ProfileGrid'
 export const getStaticPaths = async () => {
     const res = await fetch('http://127.0.0.1:10009/wp-json/data/v1/profiles/');
@@ -15,7 +25,6 @@ export const getStaticPaths = async () => {
       fallback: false
     }
   }
-
     
   export const getStaticProps = async (context) => {
     const username = context.params.username;
@@ -27,11 +36,68 @@ export const getStaticPaths = async () => {
     }
   }
   
+
+
+
+
   const Details = ({ profile }) => {
-    return (
+
+    // Tabs Tutorial Here: https://dev.to/amrtcrypto/creating-linkable-tabs-in-nextjs-the-easy-way-17pg
+    const router = useRouter()
+    const { username } = router.query
+    const [activeTab, setActiveTab] = useState('gallery')
+
+
+    // tab 2
+    const [activeTab2, setActiveTab2] = useState('tab1')
+
+    // tab 3
+    const [activeTab3, setActiveTab3] = useState('tab1')
+
+
+return (
 <>
+
 <div class="profile-section">
 
+
+{ /* Tabs Method 1 */}
+<div>
+<h1>Tab 1</h1>
+      <Link href={`/${username}/gallery`} as={`/${username}/gallery`}>
+        <div className={activeTab === 'gallery' ? 'active' : ''} onClick={() => setActiveTab('gallery')}>Gallery</div>
+      </Link>
+      <Link href="/tab2">
+        <div className={activeTab === 'tab2' ? 'active' : ''} onClick={() => setActiveTab('tab2')}>Tab 2</div>
+      </Link>
+    </div>
+
+
+
+
+{ /* Tabs Method 2 */}
+<div>
+  <h1>Tab 2</h1>
+      <button onClick={() => setActiveTab2('tab1')}>Tab 1</button>
+      <button onClick={() => setActiveTab2('tab2')}>Tab 2</button>
+      {activeTab2 === 'tab1' && <div>Tab 1 Content</div>}
+      {activeTab2 === 'tab2' && <div>Tab 2 Content</div>}
+    </div>
+
+
+
+    { /* Tabs Method 3 */}
+    <div>
+    <h1>Tab 3</h1>
+      <Link href="#tab1" onClick={() => setActiveTab3('tab1')}>
+        <div>Tab 1</div>
+      </Link>
+      <Link href="#tab2" onClick={() => setActiveTab3('tab2')}>
+        <div>Tab 2</div>
+      </Link>
+      {activeTab3 === 'tab1' && <Tab1 />}
+      {activeTab3 === 'tab2' && <Tab2 />}
+    </div>
 
 
 <div class="profile-hero">
@@ -70,3 +136,4 @@ export const getStaticPaths = async () => {
   }
   
   export default Details;
+
