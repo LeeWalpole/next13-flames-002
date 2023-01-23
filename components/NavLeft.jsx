@@ -15,13 +15,19 @@ export default function NavLeft () {
 
           <li>
           <Link href="/">
+          Home
+          </Link>
+          </li>
+
+          <li>
+          <Link href="/favourites/">
           Link here 1
           </Link>
           </li>
 
           <li>
-          <Link href="/">
-          Link here
+          <Link href="/profile-2">
+          Captain Marvel
           </Link>
           </li>
 

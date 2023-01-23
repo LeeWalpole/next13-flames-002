@@ -2,7 +2,7 @@ import styles from '@/styles/Feed.module.css'
 import Link from 'next/link'
 import Carousel from '../components/Carousel'
 import FeedHeader from '../components/FeedHeader'
-import { useEffect, useState } from 'react'
+
 
 
 export const getStaticProps = async () => {
@@ -17,7 +17,6 @@ export const getStaticProps = async () => {
 const Profiles = ({ profiles }) => {
   return (
     <div className={styles.feed}>
-
       {profiles.map(profile => (
         <div key={profile.username} className={styles.feedItem}>
         <Carousel images={profile.gallery} />

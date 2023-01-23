@@ -4,10 +4,10 @@ export default function ProfileGallery ({ username, display_name, bio_mini, avat
     return ( <>
 <header className={styles.feedHeader}>
 <div className={styles.left}>
-<Link href={`/profiles/${username}`} >
+<Link href={`/${username}`} >
   <img className={styles.avatar} src={avatar} />
   </Link>
-  <Link href={`/profiles/${username}`} >
+  <Link href={`/${username}`} >
     <div className={styles.name}>
         <p className={styles.display_name}>{display_name }</p>
         <p className={styles.username}>@{ username }</p>

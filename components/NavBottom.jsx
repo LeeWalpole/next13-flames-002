@@ -6,7 +6,7 @@ export default function NavBottom () {
         <ul>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/favorites/">Favorites</Link></li>
-            <li><Link href="/profile-1/">Profile</Link></li>
+            <li><Link href="/profile-1/">Profile 1</Link></li>
         </ul>
     </nav>
     </>
