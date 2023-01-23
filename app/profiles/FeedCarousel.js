@@ -1,39 +1,42 @@
 'use client';
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 // Import Swiper styles
 import 'swiper/css';
-// Import Swiper styles
-import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
-
-export default FeedCarousel;
-
-function FeedCarousel () {
-
+function Carousel ()  {
   return (
+    <>    
     <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
+      slidesPerView={2}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
+      <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
+      <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
+      <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
+      <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
+      <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
+      <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
+      <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
+      <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
+      <SwiperSlide><img src="https://www.alphafa.com/wp-content/uploads/2018/09/placeholder-square.jpg" /></SwiperSlide>
     </Swiper>
+    </>
   );
 };
 
-/*
-{ gallery_url_thumbnail, gallery_alt, key }
-
-      <SwiperSlide key={key}>
-        <figure>
-          <img src={gallery_url_thumbnail} alt={gallery_alt} />
-      </figure>
-      </SwiperSlide>
-
-*/
+export default Carousel
