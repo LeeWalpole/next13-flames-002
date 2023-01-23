@@ -2,17 +2,17 @@
 // import Link from 'next/link';
 // import Image from 'next/image';
 import FeedHeader from './FeedHeader'
-// import FeedCarousel from './FeedCarousel'
-// import Feed from './Feed'
-import TestProp from './TestProp'
-import TestProp2 from './TestProp2'
-// import FeedGallery from './FeedGallery'
 import FeedCarousel from './FeedCarousel'
+// import Feed from './Feed'
+// import TestProp from './TestProp'
+// import TestProp2 from './TestProp2'
+// import FeedGallery from './FeedGallery'
 
 
-
+// List of profiles / posts live on Wordpress. This works fine.
 async function getData() {
-  const res = await fetch('http://127.0.0.1:10009/wp-json/data/v1/profiles/');
+  // const res = await fetch('http://127.0.0.1:10009/wp-json/data/v1/profiles/');
+  const res = await fetch('https://www.flames.agency/api/profiles.json');
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
   // Recommendation: handle errors
@@ -24,20 +24,19 @@ async function getData() {
 }
 
 
-
 export default async function Profiles() {
   const profiles = await getData();
 
   return ( 
 <main class="main">
   
-<FeedCarousel/> 
+<FeedCarousel/>
 
   <div>
   {profiles.map((profile) => (
   <div key={profile.id}>
 
-    {/* <FeedCarousel/> */}
+    {/* <FeedCarousel/>  */}
 
         {/* <section class="slider">
           {profile.gallery.map((image) => (
