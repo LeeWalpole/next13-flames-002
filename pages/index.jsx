@@ -1,33 +1,28 @@
+import styles from '@/styles/Feed.module.css'
 import Link from 'next/link'
 import Carousel from '../components/Carousel'
 import FeedHeader from '../components/FeedHeader'
+import { useEffect, useState } from 'react'
+
 
 export const getStaticProps = async () => {
   //const res = await fetch('https://jsonplaceholder.typicode.com/users');
   const res = await fetch('http://127.0.0.1:10009/wp-json/data/v1/profiles/');
   const data = await res.json();
   return {
-    props: { profiles: data }
+    props: { profiles: data } 
   }
 }
 
-
 const Profiles = ({ profiles }) => {
   return (
-    <div>
+    <div className={styles.feed}>
 
       {profiles.map(profile => (
-        <article key={profile.username}>
-
+        <div key={profile.username} className={styles.feedItem}>
         <Carousel images={profile.gallery} />
-
-        <Link href={'/' + profile.username} >
-          <section class="feed-item">
-            <h3>{ profile.username }</h3>
-            </section>
-        </Link>
         <FeedHeader id={profile.id} username={profile.username} display_name={profile.display_name} bio_mini={profile.bio_mini} avatar={profile.avatar_url} />
-        </article>
+        </div>
       ))}
     </div>
   );

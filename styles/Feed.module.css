@@ -1,0 +1,101 @@
+  /* Check if duplicated */
+  
+  
+  .feedItem {
+    background: #101010;
+    color: white;
+    border-bottom: 1px solid #222;
+    margin-bottom: 20px;
+    padding: 0 0 20px;
+  }
+  
+  .left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  
+  
+  
+  
+  
+  
+  .feedHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.2;
+    margin-top:9px;
+    padding: 15px 15px 5px;
+  }
+  
+   .avatar {
+    height: 26px;
+    width: 32px;
+    border-radius: 50%;
+    border: 1px solid #696969;
+  }
+  
+  
+  .feedHeader .user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .feedHeader .name {
+    margin-left: 10px;
+  }
+  
+  .feedHeader .display_name  {
+    font-weight: bold;
+  color:white;
+  text-decoration: none;
+  }
+  
+  .feedHeader .username {
+    font-size: 0.9rem;
+    display: none;
+  }
+  
+  .feedHeader .bio {
+    font-size: 0.9rem;
+    line-height: 1.25;
+    color: #999;
+  }
+  
+  .footer {
+    padding: 0 15px;
+    font-size: 90%;
+  }
+  
+  
+  .icon {
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .icon:last-child {
+    margin-right: 0;
+  }
+  
+  .header-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+
+    

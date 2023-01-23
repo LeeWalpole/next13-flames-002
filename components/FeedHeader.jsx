@@ -1,24 +1,26 @@
+import styles from '@/styles/Feed.module.css'
 import Link from 'next/link';
 export default function ProfileGallery ({ username, display_name, bio_mini, avatar }) {
     return ( <>
-<header class="feed-item-header">
-<div class="feed-item-left">
-<img class="feed-item-mugshot" src={avatar} />
+<header className={styles.feedHeader}>
+<div className={styles.left}>
 <Link href={`/profiles/${username}`} >
-  
-    <div class="feed-item-name">
-        <p class="feed-item-display_name">{display_name }</p>
-        <p class="feed-item-username">@{ username }</p>
+  <img className={styles.avatar} src={avatar} />
+  </Link>
+  <Link href={`/profiles/${username}`} >
+    <div className={styles.name}>
+        <p className={styles.display_name}>{display_name }</p>
+        <p className={styles.username}>@{ username }</p>
     </div>
   </Link>
 </div>
-<div class="feed-item-right">
+<div className={styles.right}>
 
 </div>
 </header>
 
-<footer class="feed-item-footer">
-<div class="feed-item-bio">{ bio_mini }</div>
+<footer className={styles.footer}>
+<div className={styles.bio}>{ bio_mini }</div>
 </footer>
     
     </>
