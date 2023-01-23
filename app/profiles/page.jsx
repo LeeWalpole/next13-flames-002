@@ -7,6 +7,8 @@ import FeedCarousel from './FeedCarousel'
 // import TestProp from './TestProp'
 // import TestProp2 from './TestProp2'
 // import FeedGallery from './FeedGallery'
+// <TestProp title="React 💙" />
+// <TestProp2 person="Name" size="10" />
 
 
 // List of profiles / posts live on Wordpress. This works fine.
@@ -53,6 +55,7 @@ export default async function Profiles() {
   <figure key={image.url_full}>{image.url_full}</figure>
 ))}
 </section>
+pm run dev
 
 
 
@@ -65,8 +68,7 @@ export default async function Profiles() {
 
 
 
-<TestProp title="React 💙" />
-<TestProp2 person="Name" size="10" />
+
 </main>
   );
 }
