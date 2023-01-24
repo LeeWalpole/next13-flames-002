@@ -50,22 +50,22 @@ export const getStaticPaths = async () => {
 return (
 <>
 
-<div class="profile-section">
+<div className="profile-section">
 
 
 
-<div class="profile-hero">
-  <div class="profile-hero-image-row">
-    <div class="profile-hero-icon">
+<div className="profile-hero">
+  <div className="profile-hero-image-row">
+    <div className="profile-hero-icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
 </svg>
 
     </div>
-    <div class="profile-hero-image iosRounded">
+    <div className="profile-hero-image iosRounded">
       <Image src={ profile.avatar_url } alt="Alt Text" height="500" width="500" />
     </div>
-    <div class="profile-hero-icon profile-hero-icon-tip">
+    <div className="profile-hero-icon profile-hero-icon-tip">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 </svg>
@@ -73,15 +73,15 @@ return (
     </div>
   </div>
 
-  <div class="profile-hero-name-row">
-    <h1 class="profile-hero-display_name">{ profile.display_name }</h1>
-    <p class="profile-hero-bio">{ profile.bio_mini }</p>
+  <div className="profile-hero-name-row">
+    <h1 className="profile-hero-display_name">{ profile.display_name }</h1>
+    <p className="profile-hero-bio">{ profile.bio_mini }</p>
   </div>
 </div>
 
 
-<section class="profile-tabs">
-<ul class="profile-tabs-menu">
+<section className="profile-tabs">
+<ul className="profile-tabs-menu">
   <li className={activeTab === 'tab1' ? 'active' : ''} onClick={() => setActiveTab('tab1')}>
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />

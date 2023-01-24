@@ -29,7 +29,7 @@ const Profiles = ({ profiles }) => {
 export default Profiles;
 
 /*
-<section class="slider">
+<section className="slider">
 {profile.gallery.map((image) => (
   <figure key={image.url_full}>{image.url_full}</figure>
 ))}

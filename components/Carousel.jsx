@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useRef, useState, useEffect } from "react";
+// import React, { useRef, useState, useEffect } from "react";
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,13 +11,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-
-
 function Carousel ({ images })  {
-
-
-
-
 
   return (
     <>
@@ -40,5 +34,3 @@ function Carousel ({ images })  {
   );
 };
 export default Carousel
-
-
