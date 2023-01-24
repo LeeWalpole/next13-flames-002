@@ -1,7 +1,8 @@
-  export default function ProfileGallery ({ gallery_url_thumbnail, gallery_alt }) {
+import Image from 'next/image'
+export default function ProfileGallery ({ gallery_url_thumbnail, gallery_alt }) {
     return (
       <figure>
-          <img src={gallery_url_thumbnail} alt={gallery_alt} />
+          <Image src={gallery_url_thumbnail} alt={gallery_alt} width="500" height="500" />
       </figure>
     );
   }

@@ -2,8 +2,9 @@
 import { useState } from 'react'
 // import { useRouter } from 'next/router'
 // import Tab1 from './tab1'
-import Tab2 from './tab2'
-import Tab3 from './tab3'
+import Tab2 from './Tab2'
+import Tab3 from './Tab3'
+import Image from 'next/image'
 
 
 // tab3
@@ -62,7 +63,7 @@ return (
 
     </div>
     <div class="profile-hero-image iosRounded">
-      <img src={ profile.avatar_url } alt="Alt Text" />
+      <Image src={ profile.avatar_url } alt="Alt Text" height="500" width="500" />
     </div>
     <div class="profile-hero-icon profile-hero-icon-tip">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

@@ -4,9 +4,9 @@ import NavLeft from './NavLeft'
 export default function Layout({ children }) {
     return (
     <div>
-      <div class="app">
+      <div className="app">
         <NavLeft />
-        <div class="main">
+        <div className="main">
           {children}
           <NavBottom />
         </div>

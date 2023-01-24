@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from '@/styles/Feed.module.css'
 import Link from 'next/link';
 export default function ProfileGallery ({ username, display_name, bio_mini, avatar }) {
@@ -5,7 +6,7 @@ export default function ProfileGallery ({ username, display_name, bio_mini, avat
 <header className={styles.feedHeader}>
 <div className={styles.left}>
 <Link href={`/${username}`} >
-  <img className={styles.avatar} src={avatar} />
+  <Image className={styles.avatar} src={avatar} height="500" width="500" alt="Alt" />
   </Link>
   <Link href={`/${username}`} >
     <div className={styles.name}>
