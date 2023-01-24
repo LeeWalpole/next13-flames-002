@@ -9,7 +9,7 @@ export default function NavLeft () {
     <nav className={styles.sticky}>
 
         <Link href="/">
-<Image className={styles.avatar} src="https://i0.wp.com/www.flames.agency/wp-content/uploads/flames-agency-icon-large.png?fit=640%2C640&ssl=1" height="500" width="500" alt="Alt" />
+<Image className={styles.logo} src="https://i0.wp.com/www.flames.agency/wp-content/uploads/flames-agency-icon-large.png?fit=640%2C640&ssl=1" height="50" width="50" alt="Alt" />
         </Link>
 
         <ul className={styles.menu}>
