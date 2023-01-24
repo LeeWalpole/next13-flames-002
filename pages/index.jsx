@@ -1,5 +1,5 @@
 import styles from '@/styles/Feed.module.css'
-import Link from 'next/link'
+// import Link from 'next/link'
 import Carousel from '../components/Carousel'
 import FeedHeader from '../components/FeedHeader'
 
@@ -7,7 +7,7 @@ import FeedHeader from '../components/FeedHeader'
 
 export const getStaticProps = async () => {
   //const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const res = await fetch('http://127.0.0.1:10009/wp-json/data/v1/profiles/');
+  const res = await fetch('https://www.flames.agency/api/profiles.json');
   const data = await res.json();
   return {
     props: { profiles: data } 
