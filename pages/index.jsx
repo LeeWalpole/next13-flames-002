@@ -2,7 +2,8 @@ import styles from '@/styles/Feed.module.css'
 // import Link from 'next/link'
 import Carousel from '../components/Carousel'
 import FeedHeader from '../components/FeedHeader'
-
+import Modal from '../components/Modal'
+import { useState } from 'react'
 
 
 export const getStaticProps = async () => {
@@ -15,7 +16,49 @@ export const getStaticProps = async () => {
 }
 
 const Profiles = ({ profiles }) => {
+
+  const [modals, setModals] = useState({});
+  const handleModal = (id) => {
+    setModals(prevModals => {
+      return {
+        ...prevModals,
+        [id]: !prevModals[id]
+      }
+    });
+
+  }
+  
   return (
+
+    <>
+
+<div>
+      <button onClick={() => handleModal("modal1")}>Open modal 1</button>
+      <Modal id="modal1" isOpen={modals["modal1"]} setIsOpen={handleModal}>
+        <h1>Modal Content 1</h1>
+        <button onClick={() => handleModal("modal1")}>Close modal 1</button>
+      </Modal>
+      <button onClick={() => handleModal("modal2")}>Open modal 2</button>
+      <Modal id="modal2" isOpen={modals["modal2"]} setIsOpen={handleModal}>
+        <h1>Modal Content 2</h1>
+        <button onClick={() => handleModal("modal2")}>Close modal 2</button>
+      </Modal>
+    </div>
+
+{/* 
+   <div>
+      <button onClick={() => setIsModalOpen(true)}>Open modal</button>
+      <Modal id="modal1" isOpen={isModalOpen}>
+        <h1>Modal Content</h1>
+        <button onClick={() => setIsModalOpen(false)}>Close modal</button>
+      </Modal>
+      <button onClick={() => setIsModalOpen2(true)}>Open modal 2</button>
+      <Modal id="modal2" isOpen={isModalOpen2}>
+        <h1>Modal Content 2</h1>
+        <button onClick={() => setIsModalOpen2(false)}>Close modal 2</button>
+      </Modal>
+    </div> */}
+
     <div className={styles.feed}>
       {profiles.map(profile => (
         <div key={profile.username} className={styles.feedItem}>
@@ -24,6 +67,10 @@ const Profiles = ({ profiles }) => {
         </div>
       ))}
     </div>
+
+    </>
+
+
   );
 }
 export default Profiles;
