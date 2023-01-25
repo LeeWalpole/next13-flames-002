@@ -37,7 +37,7 @@
   }
   
    .avatar {
-    height: 26px;
+    height: 32px;
     width: 32px;
     border-radius: 50%;
     border: 1px solid #696969;
@@ -97,5 +97,5 @@
   }
 
 
-
-    
+  li.icon svg 
+  {color:white; height:32px; }

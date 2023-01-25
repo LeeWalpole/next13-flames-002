@@ -6,6 +6,10 @@ import Tab2 from './Tab2'
 import Tab3 from './Tab3'
 import Image from 'next/image'
 
+// Modals Step #1. Import hook and component
+import useModal from '@/hooks/useModal'
+import Modal from '@/components/Modal'
+
 
 // tab3
 // import dynamic from 'next/dynamic'
@@ -47,6 +51,9 @@ export const getStaticPaths = async () => {
     // tab 2
     const [activeTab, setActiveTab] = useState('tab1')
 
+        // Step 2. Add this to hook up with hooks/useModal.js 
+        const { modals, handleModal } = useModal();
+
 return (
 <>
 
@@ -56,21 +63,41 @@ return (
 
 <div className="profile-hero">
   <div className="profile-hero-image-row">
-    <div className="profile-hero-icon">
+    <div className="profile-hero-icon" onClick={() => handleModal("modalFavorite")}>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
 </svg>
 
     </div>
+
+    <Modal id="modalFavorite" isOpen={modals["modalFavorite"]} setIsOpen={handleModal}>
+            <header class="popup-header">
+                <h5 class="popup-title">Coming soon 🙂</h5>
+                <p class="popup-description">You will be able to save your favorites in March 2023.</p>
+                <button onClick={() => handleModal("modalFavorite")}>Go back.</button>
+            </header>
+      </Modal>
+
+
     <div className="profile-hero-image iosRounded">
       <Image src={ profile.avatar_url } alt="Alt Text" height="500" width="500" />
     </div>
-    <div className="profile-hero-icon profile-hero-icon-tip">
+    <div className="profile-hero-icon" onClick={() => handleModal("modalFavorite2")}>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 </svg>
 
     </div>
+
+    <Modal id="modalFavorite2" isOpen={modals["modalFavorite2"]} setIsOpen={handleModal}>
+            <header class="popup-header">
+                <h5 class="popup-title">You want to treat { profile.display_name }, huh?</h5>
+                <p class="popup-description">You can pay her directly through <u>Paypal here</u>.</p>
+                <button onClick={() => handleModal("modalFavorite2")}>Go back.</button>
+            </header>
+      </Modal>
+   
+
   </div>
 
   <div className="profile-hero-name-row">
