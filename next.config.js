@@ -4,8 +4,8 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    // domains: ['localhost'],
-    unoptimized:true
+    domains: ['https://www.thaiflames.app/backend/'],
+    unoptimized:false
   }
 }
 
