@@ -38,7 +38,7 @@
 
 
   .navTop .logo {
-    height: 24px;
+    height: 26px; object-fit: contain;
   }
 
   .navTop svg {
