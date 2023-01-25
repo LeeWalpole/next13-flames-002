@@ -5,10 +5,10 @@ import Link from 'next/link';
 /* Temporary Modal Imports */
 import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
-import { useState } from 'react'
+// import { useState } from 'react'
 
 
-export default function ProfileGallery ({ username, display_name, bio_mini, avatar }) {
+export default function ProfileGallery ({ username, display_name, bio_mini, avatar_profile }) {
 
 
   const { modals, handleModal } = useModal();
@@ -19,7 +19,7 @@ export default function ProfileGallery ({ username, display_name, bio_mini, avat
 <header className={styles.feedHeader}>
 <div className={styles.left}>
 <Link href={`/${username}`} >
-  <Image className={styles.avatar} src={avatar} height="500" width="500" alt="Alt" />
+  <Image className={styles.avatar} src={avatar_profile} height="32" width="32" alt={display_name} />
   </Link>
   <Link href={`/${username}`} >
     <div className={styles.name}>

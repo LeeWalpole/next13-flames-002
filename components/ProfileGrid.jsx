@@ -5,7 +5,7 @@ import Image from "next/image";
         <div className="grid-3">    
         {images.map((image, index) => (
         <figure key={index} className="grid-item grid-item-4x5">
-              <Image src={image.url_full} height="50" width="50" alt="alt" />
+              <Image src={image.grid_desktop_image} height="200" width="250" alt="Flames Agency" />
           </figure>
              ))}
       </div>

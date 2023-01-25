@@ -4,7 +4,7 @@ import FeedHeader from '../components/FeedHeader'
 
 export const getStaticProps = async () => {  
   //const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const res = await fetch('https://www.flames.agency/api/profiles.json');
+  const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles/');
   const data = await res.json();
   return {
     props: { profiles: data } 
@@ -21,7 +21,7 @@ const Profiles = ({ profiles }) => {
       {profiles.map(profile => (
         <div key={profile.username} className={styles.feedItem}>
         <Carousel images={profile.gallery} />
-        <FeedHeader id={profile.id} username={profile.username} display_name={profile.display_name} bio_mini={profile.bio_mini} avatar={profile.avatar_url} />
+        <FeedHeader id={profile.id} username={profile.username} display_name={profile.display_name} bio_mini={profile.bio_mini} avatar_profile={profile.avatar_profile} />
         </div>
       ))}
     </div>

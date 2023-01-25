@@ -16,7 +16,7 @@ import Modal from '@/components/Modal'
 
 import ProfileGrid from '@/components/ProfileGrid'
 export const getStaticPaths = async () => {
-    const res = await fetch('https://www.flames.agency/api/profiles.json');
+    const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles/');
     const data = await res.json();
   
     // map data to an array of path objects with params (id)
@@ -35,7 +35,7 @@ export const getStaticPaths = async () => {
   export const getStaticProps = async (context) => {
     const username = context.params.username;
     // const res = await fetch('http://127.0.0.1:10009/wp-json/data/v1/profiles/' + username);
-    const res = await fetch('https://www.flames.agency/api/' + username +'.json');
+    const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles/' + username);
     const data = await res.json();
   
     return {
@@ -80,7 +80,7 @@ return (
 
 
     <div className="profile-hero-image iosRounded">
-      <Image src={ profile.avatar_url } alt="Alt Text" height="500" width="500" />
+      <Image src={ profile.avatar_profile } alt={profile.display_name} height="150" width="150" />
     </div>
     <div className="profile-hero-icon" onClick={() => handleModal("modalFavorite2")}>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
