@@ -2,8 +2,9 @@ import styles from '@/styles/Feed.module.css'
 // import Link from 'next/link'
 import Carousel from '../components/Carousel'
 import FeedHeader from '../components/FeedHeader'
+import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
-import { useState } from 'react'
+import useState  from 'react'
 
 
 export const getStaticProps = async () => {
@@ -17,6 +18,7 @@ export const getStaticProps = async () => {
 
 const Profiles = ({ profiles }) => {
 
+  /*
   const [modals, setModals] = useState({});
   const handleModal = (id) => {
     setModals(prevModals => {
@@ -25,8 +27,12 @@ const Profiles = ({ profiles }) => {
         [id]: !prevModals[id]
       }
     });
+      }
+    */
+      const { modals, handleModal } = useModal();
 
-  }
+    
+
   
   return (
 
