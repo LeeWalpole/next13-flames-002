@@ -1,8 +1,7 @@
 {
   "name": "Flames",
   "short_name": "Flames",
-  "theme_color": "#111111",
-  "background_color": "#000000",
+  "background_color": "#111",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
