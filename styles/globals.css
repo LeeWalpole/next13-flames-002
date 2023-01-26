@@ -160,6 +160,12 @@ a {  text-decoration: none; color: inherit;}
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   }
+
+
+  .main { 
+    padding-bottom:calc(75px)!important; /* Footer Height */
+  }
+
   
   p {    line-height: var(--line-height); }
   
@@ -704,7 +710,7 @@ button:active {
   }
 
   .profile-hero {
-    padding: 20px 40px;
+    padding: 0 40px 20px;
   }
 
   .profile-hero-name-row {
