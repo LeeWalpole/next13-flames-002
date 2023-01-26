@@ -4,6 +4,9 @@ import Image from 'next/image';
 // import { useState } from 'react'
 import { useRouter } from 'next/router'
 /* */
+
+import flamesIcon from '../public/flames-icon.webp'
+
 export default function NavLeft () {
 
 
@@ -15,7 +18,7 @@ export default function NavLeft () {
     <nav className={styles.sticky}>
 
         <Link href="/">
-<Image className={styles.logo} src="https://i0.wp.com/www.flames.agency/wp-content/uploads/flames-agency-icon-large.png?fit=640%2C640&ssl=1" height="50" width="50" alt="Alt" />
+          <Image className={styles.logo} src={flamesIcon} height="50" width="50" alt="Flames" />
         </Link>
 
         <ul className={styles.menu}>

@@ -19,7 +19,7 @@ export default function ProfileGallery ({ username, display_name, bio_mini, avat
 <header className={styles.feedHeader}>
 <div className={styles.left}>
 <Link href={`/${username}`} >
-  <Image className={styles.avatar} src={avatar_profile} height="32" width="32" alt={display_name} />
+  <Image className={styles.avatar} src={avatar_profile} height="32" width="32" alt={display_name} unoptimized />
   </Link>
   <Link href={`/${username}`} >
     <div className={styles.name}>

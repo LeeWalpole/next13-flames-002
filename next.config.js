@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['https://www.thaiflames.app/backend/'],
+    domains: ['https://www.thaiflames.app/backend/', 'https://i0.wp.com', 'www.thaiflames.app'],
     unoptimized:false
   }
 }
