@@ -80,7 +80,7 @@ return (
 
 
     <div className="profile-hero-image iosRounded">
-      <Image src={ profile.avatar_profile } alt={profile.display_name} height="150" width="150" />
+      <Image src={ profile.avatar_url } alt={profile.display_name} height="150" width="150" />
     </div>
     <div className="profile-hero-icon" onClick={() => handleModal("modalFavorite2")}>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

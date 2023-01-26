@@ -8,7 +8,7 @@ import Modal from '../components/Modal'
 // import { useState } from 'react'
 
 
-export default function ProfileGallery ({ username, display_name, bio_mini, avatar_profile }) {
+export default function ProfileGallery ({ username, display_name, bio_mini, avatar_url }) {
 
 
   const { modals, handleModal } = useModal();
@@ -19,7 +19,7 @@ export default function ProfileGallery ({ username, display_name, bio_mini, avat
 <header className={styles.feedHeader}>
 <div className={styles.left}>
 <Link href={`/${username}`} >
-  <Image className={styles.avatar} src={avatar_profile} height="32" width="32" alt={display_name} unoptimized />
+  <Image className={styles.avatar} src={avatar_url} height="32" width="32" alt={display_name} />
   </Link>
   <Link href={`/${username}`} >
     <div className={styles.name}>

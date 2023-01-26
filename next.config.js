@@ -4,7 +4,11 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['https://www.thaiflames.app/backend/', 'https://i0.wp.com', 'www.thaiflames.app'],
+    domains: [
+    'www.thaiflames.app', 
+    'i0.wp.com', 
+    'thaiflames.app'
+    ],
     unoptimized:false
   }
 }
@@ -12,6 +16,10 @@ const nextConfig = {
 const withPWA = require("next-pwa");
 
 module.exports = withPWA({
+  env: {
+    NEXT_PUBLIC_API_URL:
+      process.env.NEXT_PUBLIC_API_URL,
+  },
   pwa: {
     dest: "public",
     register: true,
