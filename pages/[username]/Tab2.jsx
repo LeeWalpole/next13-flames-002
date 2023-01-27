@@ -46,17 +46,9 @@ import Link from "next/link";
 
       <ul className="profile-links">
         <li>
-          <Link href="#">This is a link</Link>
+          <Link href="#">scarletwitch.con</Link>
         </li>
-        <li>
-          <Link href="#">This is a link</Link>
-        </li>
-        <li>
-          <Link href="#">This is a link</Link>
-        </li>
-        <li>
-          <Link href="#">This is a link</Link>
-        </li>
+
       </ul>
     </section>
     </>

@@ -26,7 +26,7 @@ function Carousel ({ images })  {
     >
       {images.map((image, index) => (
       <SwiperSlide key={index}>
-        <Image src={image.gallery_image_url} alt={image.gallery_image_alt} width={image.gallery_image_width} height={image.gallery_image_height} placeholder="blur"   />
+        <Image src={image.gallery_image_url} alt={image.gallery_image_alt} width={image.gallery_image_width} height={image.gallery_image_height}   />
       </SwiperSlide>
       ))}
     </Swiper>

@@ -825,7 +825,14 @@ display: block;
     aspect-ratio: 4 / 5;
     margin: 0;
     padding: 0;
+    background:black;
+    background-image: url('/images/icons/icon-72x72.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
+
+  
 
   .grid-3 img {
     height: 100%;
