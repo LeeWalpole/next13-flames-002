@@ -1,0 +1,115 @@
+
+
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 8887;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    transition: all 1s ease-in-out;
+  }
+
+  
+
+
+
+  .modalBoxSlideup {
+
+
+/* display: flex;
+align-items: center;
+justify-content: center; */
+
+
+animation: slideIn 0.3s ease-in-out;
+position: relative;
+z-index: 2; /* One level above the background modal which will close the popup */
+padding:50px;
+border:1px solid #333;
+background-color: black;
+
+
+}
+
+
+  
+  .modalBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-in-out;
+    position: relative;
+    z-index: 2; /* One level above the background modal which will close the popup */
+    padding:50px;
+    border:1px solid #333;
+    background-color: black;
+  }
+  
+  .modalBg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.125s ease-in-out;
+    }
+    
+    .modal-content {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      animation: zoomIn 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+  
+
+ 
+    
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.5);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+    
+  
+  
+
+    
+
+
+
+

@@ -6,9 +6,23 @@ import Tab2 from './Tab2'
 import Tab3 from './Tab3'
 import Image from 'next/image'
 
+
 // Modals Step #1. Import hook and component
 import useModal from '@/hooks/useModal'
 import Modal from '@/components/Modal'
+
+
+const serverSideProps = {
+  avatar: [
+    {
+      url: "http://localhost:3000/_next/image?url=https%3A%2F%2Fwww.thaiflames.app%2Fbackend%2Fwp-content%2Fuploads%2Fcaptain-marvel-0-150x150.webp&w=384&q=75",
+      alt: "Image 1",
+      width: 72,
+      height: 72,
+      placeholder: "/images/icons/icon-72x72.png"
+    },
+  ]
+}
 
 
 // tab3
@@ -79,21 +93,26 @@ return (
       </Modal>
 
 
+
     <div className="profile-hero-image iosRounded">
-      <Image src={ profile.avatar_url } alt={profile.display_name} height="150" width="150" />
+      <Image placeholder="/images/icons/icon-72x72.png" src={ profile.avatar_url } alt={profile.display_name} height="150" width="150" />
     </div>
     <div className="profile-hero-icon" onClick={() => handleModal("modalFavorite2")}>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 </svg>
+
 
     </div>
 
     <Modal id="modalFavorite2" isOpen={modals["modalFavorite2"]} setIsOpen={handleModal}>
             <header class="popup-header">
-                <h5 class="popup-title">You want to treat { profile.display_name }, huh?</h5>
-                <p class="popup-description">You can pay her directly through <u>Paypal here</u>.</p>
-                <button onClick={() => handleModal("modalFavorite2")}>Go back.</button>
+                <h5 class="popup-title">Share { profile.display_name } with the world...</h5>
+                <p class="popup-description"></p>
+                <div class="buttons">
+                  <a onClick={() => handleModal("modalFavorite2")} class="button">Copy Link</a>
+                  <a onClick={() => handleModal("modalFavorite2")} class="button ghost-button">Copy Link</a>
+                </div>
             </header>
       </Modal>
    

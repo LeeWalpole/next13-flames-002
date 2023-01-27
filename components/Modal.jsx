@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
+import styles from '@/styles/Modal.module.css'
 
 const Modal = ({ isOpen, id, setIsOpen, children }) => {
   const modalRoot = useRef(null);
@@ -15,11 +16,11 @@ const Modal = ({ isOpen, id, setIsOpen, children }) => {
   }
 
   return createPortal(
-    <div className="modal">
-        <div className="modalBox">
+    <div className={styles.modal}>
+        <div className={styles.modalBoxSlideup}>
           {children}
         </div>
-        <span className="modalBg" onClick={() => setIsOpen(id)}></span>
+        <span className={styles.modalBg} onClick={() => setIsOpen(id)}></span>
     </div>,
     modalRoot.current
   );
