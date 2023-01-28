@@ -1,4 +1,4 @@
-// import Link from 'next/link'
+import Link from 'next/link'
 import { useState } from 'react'
 // import { useRouter } from 'next/router'
 // import Tab1 from './tab1'
@@ -7,30 +7,33 @@ import Tab3 from './Tab3'
 import Image from 'next/image'
 
 
+
 // Modals Step #1. Import hook and component
 import useModal from '@/hooks/useModal'
 import Modal from '@/components/Modal'
 
 
-const serverSideProps = {
-  avatar: [
-    {
-      url: "http://localhost:3000/_next/image?url=https%3A%2F%2Fwww.thaiflames.app%2Fbackend%2Fwp-content%2Fuploads%2Fcaptain-marvel-0-150x150.webp&w=384&q=75",
-      alt: "Image 1",
-      width: 72,
-      height: 72,
-      placeholder: "/images/icons/icon-72x72.png"
-    },
-  ]
-}
+// const serverSideProps = {
+//   avatar: [
+//     {
+//       url: "http://localhost:3000/_next/image?url=https%3A%2F%2Fwww.thaiflames.app%2Fbackend%2Fwp-content%2Fuploads%2Fcaptain-marvel-0-150x150.webp&w=384&q=75",
+//       alt: "Image 1",
+//       width: 72,
+//       height: 72,
+//       placeholder: "/images/icons/icon-72x72.png"
+//     },
+//   ]
+// }
 
 
 // tab3
 // import dynamic from 'next/dynamic'
 
 import ProfileGrid from '@/components/ProfileGrid'
+import ProfileLinks from '@/components/ProfileLinks'
+
 export const getStaticPaths = async () => {
-    const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles/');
+    const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles?grab=99');
     const data = await res.json();
   
     // map data to an array of path objects with params (id)
@@ -95,9 +98,7 @@ return (
 
 
     <div className="profile-hero-image iosRounded">
-      <Image blurDataURL="/images/icons/icon-72x72.png"
-      placeholder="blur" src={ profile.avatar_url } 
-      alt={profile.display_name} height="150" width="150" />
+      <Image src={ profile.avatar_url } alt={profile.display_name} height="150" width="150" />
     </div>
 
     <div className="profile-hero-icon" onClick={() => handleModal("modalFavorite2")}>
@@ -150,8 +151,33 @@ return (
 
   </li>
 </ul>
-      {activeTab === 'tab1' && <div><ProfileGrid images={profile.gallery} /></div>}
-      {activeTab === 'tab2' && <div><Tab2/></div>}
+      {activeTab === 'tab1' && <div>
+        
+      <ul className="profile-socials">
+
+      {profile?.instagram && <p>Instagram: </p>}
+        <li>
+          <Link href="`https://www.instagram.com/`+{profile.instagram}">
+
+          </Link>
+        </li>
+        </ul>
+
+      
+      {profile?.tiktok && <p>Tiktok: {profile.tiktok}</p>}
+      {profile?.twitter && <p>Twitter: {profile.twitter}</p>}
+      {profile?.onlyfans && <p>Onlyfans: {profile.onlyfans}</p>}
+      {profile?.twitch && <p>Twitch: {profile.twitch}</p>}
+      {profile?.youtube && <p>youtube: {profile.youtube}</p>}
+
+
+
+        <ProfileGrid images={profile.gallery} /></div>}
+      {activeTab === 'tab2' && <div><Tab2/>
+      
+      <ProfileLinks links={profile.links} socials={profile.instagram} />
+      
+      </div>}
       {activeTab === 'tab3' && <div><Tab3/></div>}
       </section>
 
