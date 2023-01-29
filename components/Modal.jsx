@@ -14,6 +14,7 @@ const Modal = ({ isOpen, id, setIsOpen, children }) => {
   if (!isOpen) {
     return null
   }
+  
 
   return createPortal(
     <div className={styles.modal}>
