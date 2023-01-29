@@ -52,9 +52,7 @@ export default function ProfileGallery ({ username, display_name, bio_mini, avat
 </div>
 </header>
 
-<footer className={styles.footer}>
-<div className={styles.bio}>{ bio_mini }</div>
-</footer>
+
 
     </>
     )

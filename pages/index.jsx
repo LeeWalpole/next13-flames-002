@@ -1,6 +1,8 @@
 import styles from '@/styles/Feed.module.css'
 import Carousel from '../components/Carousel'
 import FeedHeader from '../components/FeedHeader'
+import FeedFooter from '../components/FeedFooter'
+
 
 export const getStaticProps = async () => {  
   //const res = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -20,8 +22,9 @@ const Profiles = ({ profiles }) => {
     <div className={styles.feed}>
       {profiles.map(profile => (
         <div key={profile.username} className={styles.feedItem}>
+                  <FeedHeader id={profile.id} username={profile.username} display_name={profile.display_name} bio_mini={profile.bio_mini} avatar_url={profile.avatar_url} />
         <Carousel images={profile.gallery} />
-        <FeedHeader id={profile.id} username={profile.username} display_name={profile.display_name} bio_mini={profile.bio_mini} avatar_url={profile.avatar_url} />
+        <FeedFooter id={profile.id} username={profile.username} display_name={profile.display_name} bio_mini={profile.bio_mini} avatar_url={profile.avatar_url} />
         </div>
       ))}
     </div>
