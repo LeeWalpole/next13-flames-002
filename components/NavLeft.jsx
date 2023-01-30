@@ -79,6 +79,10 @@ export default function NavLeft () {
           </li>
       </ul>
 
+      <ul className='buttons'>
+          <li className='button'>Become a Member</li>
+      </ul>
+
    
       </nav>
     </div>

@@ -1,4 +1,7 @@
 // pages/_app.js
+import '../styles/reset.css'
+import '../styles/fonts.css'
+import '../styles/colors.css'
 import '../styles/globals.css'
 import Layout from '../components/Layout'
 

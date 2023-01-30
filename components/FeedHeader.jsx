@@ -13,18 +13,16 @@ export default function ProfileGallery ({ username, display_name, bio_mini, avat
 
   const { modals, handleModal } = useModal();
 
-
-
+  
     return ( <>
 <header className={styles.feedHeader}>
 <div className={styles.left}>
-<Link href={`/${username}`} >
-  <Image className={styles.avatar} src={avatar_url} height="32" width="32" alt={display_name} />
+  <Link href={`/${username}`} className={styles.avatarBox} >
+    <Image className={styles.avatar} src={avatar_url} height="32" width="32" alt={display_name} />
   </Link>
   <Link href={`/${username}`} >
     <div className={styles.name}>
-        <p className={styles.display_name}>{display_name }</p>
-        <p className={styles.username}>@{ username }</p>
+        <h6 className={styles.display_name}>{display_name }</h6>
     </div>
   </Link>
 
