@@ -33,7 +33,7 @@ import ProfileGrid from '@/components/ProfileGrid'
 import ProfileLinks from '@/components/ProfileLinks'
 
 export const getStaticPaths = async () => {
-    const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles?grab=99');
+    const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles?grab=99?2');
     const data = await res.json();
   
     // map data to an array of path objects with params (id)

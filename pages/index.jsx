@@ -6,7 +6,7 @@ import FeedFooter from '../components/FeedFooter'
 
 export const getStaticProps = async () => {  
   //const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles?grab=99');
+  const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles?grab=99?2');
   const data = await res.json();
   return {
     props: { profiles: data } 
