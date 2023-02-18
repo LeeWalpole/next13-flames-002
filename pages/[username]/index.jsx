@@ -51,7 +51,10 @@ export const getStaticPaths = async () => {
     }
   }
     
-  export const getStaticProps = async (context) => {
+  // getServerSideProps
+  // getStaticProps
+  
+  export const getServerSideProps = async (context) => {
     const username = context.params.username;
     // const res = await fetch('http://127.0.0.1:10009/wp-json/data/v1/profiles/' + username);
     const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles/' + username, {
