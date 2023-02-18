@@ -33,7 +33,9 @@ import ProfileGrid from '@/components/ProfileGrid'
 import ProfileLinks from '@/components/ProfileLinks'
 
 export const getStaticPaths = async () => {
-    const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles?grab=99?2');
+    const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles?grab=99?2', {
+      cache: "no-cache"
+    });
     const data = await res.json();
   
     // map data to an array of path objects with params (id)
@@ -52,7 +54,9 @@ export const getStaticPaths = async () => {
   export const getStaticProps = async (context) => {
     const username = context.params.username;
     // const res = await fetch('http://127.0.0.1:10009/wp-json/data/v1/profiles/' + username);
-    const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles/' + username);
+    const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles/' + username, {
+      cache: "no-cache"
+    })
     const data = await res.json();
   
     return {
