@@ -18,6 +18,7 @@ const Profiles = () => {
   
     // Your component code goes here
 
+    return (
         <>
         <h1>useEffect / useState</h1>
         <div className={styles.feed}>
