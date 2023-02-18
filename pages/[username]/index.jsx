@@ -32,6 +32,7 @@ import Modal from '@/components/Modal'
 import ProfileGrid from '@/components/ProfileGrid'
 import ProfileLinks from '@/components/ProfileLinks'
 
+/*
 export const getStaticPaths = async () => {
     const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles?grab=99?2', {
       cache: "no-cache"
@@ -50,8 +51,12 @@ export const getStaticPaths = async () => {
       fallback: false
     }
   }
-    
-  export const getStaticProps = async (context) => {
+*/
+
+
+    // getStaticProps
+    // getServerSideProps
+  export const getServerSideProps = async (context) => {
     const username = context.params.username;
     // const res = await fetch('http://127.0.0.1:10009/wp-json/data/v1/profiles/' + username);
     const res = await fetch('https://www.thaiflames.app/backend/wp-json/data/v1/profiles/' + username, {
