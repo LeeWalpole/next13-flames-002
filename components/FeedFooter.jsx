@@ -5,6 +5,10 @@ import Link from 'next/link';
 /* Temporary Modal Imports */
 import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
+
+// Send data to Google Form
+import FormGoogle from '../components/FormGoogle'
+
 // import { useState } from 'react'
 
 
@@ -48,7 +52,6 @@ export default function FeedFooter ({ username, display_name, bio_mini, avatar_u
 
     </li>
 
-
     </ul>
 
 
@@ -60,10 +63,7 @@ export default function FeedFooter ({ username, display_name, bio_mini, avatar_u
       </header>
 </Modal>
 
-
 </footer>
-
-
 
     </>
     )

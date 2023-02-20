@@ -45,6 +45,8 @@ const Profiles = () => {
   }
 
   return (
+    <>
+
     <div className={styles.feed}>
       {profiles.map(profile => (
         <div key={profile.username} className={styles.feedItem}>
@@ -54,6 +56,7 @@ const Profiles = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

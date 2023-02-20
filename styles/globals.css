@@ -1,4 +1,15 @@
+* { box-sizing: border-box;}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}table {border-collapse: collapse;border-spacing: 0;}a {text-decoration: none;color: inherit;}
+button, input[type="submit"], input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
 
 
 /* GLOBAL VARIABLES */
@@ -94,15 +105,21 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
   --fg-color: 0; 
   --fg:hsl(var(--fg-color), 0%, 100%);
-  --fg-25:hsl(var(--fg-color), 0%, 25%);
-  --fg-50:hsl(var(--fg-color), 0%, 50%);
-  --fg-75:hsl(var(--fg-color), 0%, 75%);
 
-  --bg:hsl(0, 0%, 100%);
+
+
+  --fg:hsl(0, 0%, 100%);
+  --fg-75:hsl(0, 0%, 75%);
+  --fg-50:hsl(0, 0%, 50%);
+  --fg-25:hsl(0, 0%, 25%);
 
   --bg:hsl(0, 0%, 0%);
+  --bg-75:hsl(0, 0%, 25%);
+  --bg-50:hsl(0, 0%, 0%);
+  --bg-25:hsl(0, 0%, 0%);
 
-  --bg:hsl(0, 0%, 0%);
+
+
 
   --light:hsl(0, 0%, 50%);
   --color-grey:hsl(0, 0%, 75%);
@@ -220,10 +237,6 @@ body {
 }
 
 
-
-html {
-  overflow-y: scroll;
-}
 
 body {
   background-color: var(--bg);
@@ -456,10 +469,10 @@ h5 {
 
 
 
-.popup-on {
+/* .popup-on {
   overflow: hidden;
   max-height: 100vh;
-}
+} */
 
 
 .container {
@@ -467,8 +480,9 @@ h5 {
   margin: 10vh auto;
 }
 
-html {
-  overflow-y: scroll;
+body {
+  /* overflow-y: scroll; */
+  overflow-y: auto;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 }
 
@@ -1143,7 +1157,7 @@ cursor: pointer;
   
   @media screen and (min-width: 768px) {
     .modal-popup {
-      min-width: 640px;
+      min-width: 640px!important;
       max-width: 640px;
     }
   }
@@ -1155,4 +1169,67 @@ cursor: pointer;
   
   .modal-popup > section:last-child {
     margin-bottom: 0
+  }
+
+
+
+  @media screen and (min-width: 768px) {
+    .popup-small { 
+      background-color: var(--bg);
+      border:1px solid var(--fg-25);
+          width:100%;
+          display: block;
+        }
+      
+  }
+
+
+  .popup-small { 
+display: block; 
+    width:100%;
+    padding: var(--space-big);
+  }
+
+
+  .popup-small h5 { margin-bottom: var(--space-small); }
+  .popup-small p { margin-bottom: var(--space-normal); color: var(--fg-75); }
+
+
+  .smallPrint { color: var(--fg-50); text-align: center;  }
+
+  .popup-small form { 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: var(--space-normal);
+    width:100%;
+  }
+
+  .popup-small input[type=text], .popup-small input[type=email]  { 
+    height:44px;
+    line-height:44px;
+    padding:0 10px;
+    width:100%;
+  }
+
+  input[type="radio"] {
+    margin-right: var(--space-xsmall);
+  }
+
+  .radio-buttons { 
+    display: flex; justify-content: flex-start;
+    align-items: center;
+    gap:var(--space-normal);
+    width:100%;
+  }
+
+  
+
+  .popup-small button { 
+height:50px;
+line-height:50px;
+padding:0 40px;
+display: block;
+margin-top: 20px;
+width:100%;
   }
