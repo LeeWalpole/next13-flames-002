@@ -993,27 +993,6 @@ padding: 0.75rem;
 
 
 
-.modal-popup {
-  padding:var(--space-normal);
-  border:1px solid #333;
-background-color: black;
-}
-
-@media screen and (min-width: 768px) {
-  .modal-popup {
-    min-width: 640px;
-  }
-}
-
-.modal-popup > section {
-  margin-bottom: var(--space-small);
-}
-
-
-.modal-popup > section:last-child {
-  margin-bottom: 0
-}
-
 
 
 .buttons-section {
@@ -1149,4 +1128,31 @@ cursor: pointer;
 .feed-footer-icons svg { 
   color:var(--color-grey);
   height:var(--svg-small);
+  }
+
+
+
+
+
+
+
+
+  .modal-popup {
+  background-color: black;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .modal-popup {
+      min-width: 640px;
+      max-width: 640px;
+    }
+  }
+  
+  .modal-popup > section {
+    margin-bottom: var(--space-small);
+  }
+  
+  
+  .modal-popup > section:last-child {
+    margin-bottom: 0
   }
