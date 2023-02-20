@@ -5,6 +5,67 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* GLOBAL VARIABLES */
 /* GLOBAL VARIABLES */
 
+@-webkit-keyframes dot-keyframes {
+  0% {
+    opacity: 0.4;
+    transform: scale(1, 1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1, 1);
+  }
+}
+@keyframes dot-keyframes {
+  0% {
+    opacity: 0.4;
+    transform: scale(1, 1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1, 1);
+    
+  }
+}
+.loading-dots {
+  text-align: center;
+  width: 100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-dots--dot {
+  -webkit-animation: dot-keyframes 1.5s infinite ease-in-out;
+          animation: dot-keyframes 1.5s infinite ease-in-out;
+
+  background-color:#ff6ccc;
+  border-radius: 10px;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  box-sizing: border-box;
+  margin-right:5px;
+}
+.loading-dots--dot:nth-child(2) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.loading-dots--dot:nth-child(3) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+
+
 :root {
   --space-xxsmall: 5px;
   --space-xsmall: 10px;
@@ -31,7 +92,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 :root {
 
-  --fg:hsl(0, 0%, 100%);
+  --fg-color: 0; 
+  --fg:hsl(var(--fg-color), 0%, 100%);
+  --fg-25:hsl(var(--fg-color), 0%, 25%);
+  --fg-50:hsl(var(--fg-color), 0%, 50%);
+  --fg-75:hsl(var(--fg-color), 0%, 75%);
+
+  --bg:hsl(0, 0%, 100%);
+
+  --bg:hsl(0, 0%, 0%);
 
   --bg:hsl(0, 0%, 0%);
 
@@ -639,12 +708,13 @@ a { margin:0;}
 .profile-hero-display_name {
   color: var(--fg);
   font-size: 1.4rem;
-  margin-bottom: 10px;
+  margin-bottom:0;
 }
 
 .profile-hero-bio {
-  color: #ccc;
+  color: var(--fg-50)!important;
   font-size: 0.9rem;
+  line-height: 0.3;
 }
 
 
