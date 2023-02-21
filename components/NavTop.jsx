@@ -35,15 +35,12 @@ export default function NavTop () {
 
     <Modal id="modalBurgerMenu" isOpen={modals["modalBurgerMenu"]} setIsOpen={handleModal}>
 
-
-
-
     <div>
     <nav >
 
 
         <Link href="/">
-          <Image className={styles2.logo} src={flamesIcon} height="50" width="50" alt="Flames" />
+          <Image className={styles2.logo} src={flamesIcon} height="50" width="50" alt="Thai Flames Agency" />
         </Link>
 
         <ul className={styles2.menu}>
