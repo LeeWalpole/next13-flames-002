@@ -66,7 +66,11 @@ export default function MyComponent() {
         </div>
       ))}
       {isLoading && (
-        <p>Loading...</p>
+      <div class="loading-dots">
+      <div class="loading-dots--dot"></div>
+      <div class="loading-dots--dot"></div>
+      <div class="loading-dots--dot"></div>
+    </div>
       )}
       {currentProfileIndex === -1 && (
         <p>No more profile objects in array.</p>
