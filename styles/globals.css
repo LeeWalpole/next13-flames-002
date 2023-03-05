@@ -309,6 +309,10 @@ body {
   margin-bottom: 25px;
 }
 
+.button { 
+  cursor: pointer;
+}
+
 button {
   display: inline-block;
   border: none;
@@ -1233,3 +1237,6 @@ display: block;
 margin-top: 20px;
 width:100%;
   }
+
+
+  
