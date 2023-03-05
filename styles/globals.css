@@ -1055,8 +1055,7 @@ padding: 0.75rem;
 }
 
 
-.buttons-vertical li {
-
+.icon-text-horizontal {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -1064,6 +1063,7 @@ padding: 0.75rem;
   font-size: var(--small);
 border-bottom:1px solid #202020;
   padding: var(--space-small);
+  cursor: pointer;
 }
 
 .buttons-vertical li:last-of-type {
