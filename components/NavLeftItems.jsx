@@ -98,7 +98,7 @@ export default function NavLeftItems () {
   <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 </svg>
             </span>
-            More
+            Popup 2
             </Link>
           </li>
 
@@ -162,7 +162,7 @@ onClick={() => {
 className='button'
 >
 
-CLOSE TWO</li>
+CLOSE POPUPS (1 and 2)</li>
 
 
             <li class="icon-text-horizontal" onClick={() => handleModal("modalComingSoon")}>

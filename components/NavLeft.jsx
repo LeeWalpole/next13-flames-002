@@ -29,6 +29,14 @@ export default function NavLeft () {
 <div className={styles.navLeft}>
     <nav className={styles.sticky}>
 
+    <li className="button" onClick={() => handleModal("modalBurgerMenu")}>Popup 1</li>
+
+<Modal id="modalBurgerMenu" isOpen={modals["modalBurgerMenu"]} setIsOpen={handleModal}>
+
+<NavLeftItems/>
+
+</Modal>
+
         <NavLeftItems />
 
       {/* <ul className='buttons'>
@@ -39,7 +47,7 @@ export default function NavLeft () {
     </div>
 
 
-    <Modal id="modalSidenavMore" isOpen={modals["modalSidenavMore"]} setIsOpen={handleModal}>
+<Modal id="modalSidenavMore" isOpen={modals["modalSidenavMore"]} setIsOpen={handleModal}>
       <aside className="modal-popup modal-share">
 
           <section>
@@ -154,6 +162,9 @@ export default function NavLeft () {
 />
 
 </Modal>
+
+
+
 
 
 
