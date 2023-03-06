@@ -35,6 +35,7 @@ export default function NavTop () {
 
     <Modal id="modalBurgerMenu" isOpen={modals["modalBurgerMenu"]} setIsOpen={handleModal}>
 
+
       <NavLeftItems/>
 
     </Modal>

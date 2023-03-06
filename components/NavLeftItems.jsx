@@ -18,11 +18,11 @@ export default function NavLeftItems () {
 
 
   const { modals, handleModal} = useModal();
- 
 
   const router = useRouter();
 
     return ( <>
+
 
 <Link href="/">
           <Image className={styles.logo} src={flamesIcon} height="50" width="50" alt="Flames" />
@@ -103,21 +103,24 @@ export default function NavLeftItems () {
           </li>
 
 
+
       </ul>     
 
 
       <ul className='buttons'>
           <li onClick={() => handleModal("modalGoogleForm")} className='button'>GET PROMOTED</li>
       </ul>
-   
 
-    <Modal id="modalSidenavMore" isOpen={modals["modalSidenavMore"]} setIsOpen={handleModal}>
+
+ 
+
+<Modal id="modalSidenavMore" isOpen={modals["modalSidenavMore"]} setIsOpen={handleModal}>
       <aside className="modal-popup modal-share">
 
           <section>
-          <ul class="buttons-vertical">
-
-          <li onClick={() => handleModal("modalSidenavMore")}>
+          <ul class="buttons-vertical" >
+          
+          <li onClick={() => handleModal('modalSidenavMore', true)}>
             <Link class="icon-text-horizontal" href="/swr">
               <span class="icon-horizontal">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -139,27 +142,28 @@ export default function NavLeftItems () {
               </Link>
             </li>
 
-            <li onClick={() => handleModal("modalSidenavMore")}>
+            <li onClick={() => handleModal("modalSidenavMore, true")}>
             <Link class="icon-text-horizontal" href="/captainmarvel">
               <span class="icon-horizontal">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 </svg>
               </span>
-              <span class="text-horizontal"><p>captainmarvel</p></span>
+              <span class="text-horizontal"><p>username</p></span>
               </Link>
             </li>
 
-            <li onClick={() => handleModal("modalSidenavMore")}>
-            <Link class="icon-text-horizontal" href="/ignore">
-              <span class="icon-horizontal">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-              </span>
-              <span class="text-horizontal"><p>ignore</p></span>
-              </Link>
-            </li>
+
+
+            <li 
+onClick={() => {
+  handleModal("modalBurgerMenu", "modalSidenavMore");
+}}
+className='button'
+>
+
+CLOSE TWO</li>
+
 
             <li class="icon-text-horizontal" onClick={() => handleModal("modalComingSoon")}>
               <span class="icon-horizontal">
