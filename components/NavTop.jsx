@@ -4,7 +4,6 @@ import styles2 from '@/styles/NavLeft.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
 import NavLeftItems from '../components/NavLeftItems'
 
@@ -12,6 +11,7 @@ import { useRouter } from 'next/router'
 /* Temporary Modal Imports */
 import FormGoogle from '../components/FormGoogle'
 import flamesIcon from '../public/flames-icon.webp'
+import {useModal} from "@/providers/modalProvider";
 
 
 export default function NavTop () {
