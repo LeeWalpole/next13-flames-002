@@ -3,8 +3,8 @@ import styles from '@/styles/Feed.module.css'
 import Link from 'next/link';
 
 /* Temporary Modal Imports */
-import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
+import {useModal} from "@/providers/modalProvider";
 // import { useState } from 'react'
 
 

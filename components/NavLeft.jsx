@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/router'
 
 /* Temporary Modal Imports */
-import useModal from '../hooks/useModal'
 import Modal from '../components/Modal'
 import NavLeftItems from '../components/NavLeftItems'
 
@@ -15,12 +14,13 @@ import FormGoogle from '../components/FormGoogle'
 
 
 import flamesIcon from '../public/flames-icon.webp'
+import {useModal} from "@/providers/modalProvider";
 
 export default function NavLeft () {
 
 
   const { modals, handleModal} = useModal();
- 
+    console.log(modals)
 
   const router = useRouter();
  console.log(router)
