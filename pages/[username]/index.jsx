@@ -11,6 +11,9 @@ import Image from 'next/image'
 // Modals Step #1. Import hook and component
 import Modal from '@/components/Modal'
 
+import ProfileGrid from '@/components/ProfileGrid'
+import ProfileLinks from '@/components/ProfileLinks'
+import {useModal} from "@/providers/modalProvider";
 
 // const serverSideProps = {
 //   avatar: [
@@ -27,10 +30,6 @@ import Modal from '@/components/Modal'
 
 // tab3
 // import dynamic from 'next/dynamic'
-
-import ProfileGrid from '@/components/ProfileGrid'
-import ProfileLinks from '@/components/ProfileLinks'
-import {useModal} from "@/providers/modalProvider";
 
 /*
 export const getStaticPaths = async () => {
